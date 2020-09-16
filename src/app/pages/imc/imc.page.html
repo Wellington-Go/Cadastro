@@ -1,0 +1,42 @@
+<ion-header>  
+  <ion-toolbar color="primary"> 
+   <ion-buttons slot="start">     
+    <ion-back-button></ion-back-button>      
+    <ion-menu-button></ion-menu-button>   
+   </ion-buttons>    
+   <ion-title>IMC</ion-title>  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content><!-- Aviso de como utilizar -->
+  <ion-card>  
+    <ion-card-content>    
+      <p id="aviso">      Para realizar o cálculo digite sua altura em metros (ex.: 1,69), e o seu peso em Kilos (69,890)    
+      </p>  
+    </ion-card-content>
+  </ion-card><!-- inputs --><ion-list>  
+    <ion-item>    
+      <ion-label position="floating">Digite sua altura</ion-label>    
+      <ion-input type=number [(ngModel)]="altura"></ion-input>  
+    </ion-item>  
+    <ion-item>    
+      <ion-label position="floating">Digite seu peso</ion-label>    
+      <ion-input type=number [(ngModel)]="peso"></ion-input>  
+    </ion-item>
+  </ion-list><!-- botões (calcular) -->
+
+  <ion-button expand="block" (click)="calcular()">Calcular IMC</ion-button>
+<!-- Mesnsagem de resultados -->
+<div *ngIf="imc > 0">
+<ion-card>
+  <ion-header>IMC:  {{imc}}</ion-header>
+</ion-card>
+<ion-card-content>
+  <p><ion-icon margin="5px" name="send"></ion-icon>Situação: {{condicao}}</p>
+  <br>
+  <p><ion-icon margin="5px" name="thumbs-up"></ion-icon>IMC saudavel fica entre 18,5 a 24,99</p>
+  <br>
+  <p><ion-icon margin="5px" name="Help"></ion-icon>Não intendeu? Visite o site do OMS</p>
+</ion-card-content>
+</div>
+</ion-content>

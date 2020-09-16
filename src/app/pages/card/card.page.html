@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Card</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let card of cards"> 
+    <ion-img src='..\assets\{{card.img}}'></ion-img>   
+     <ion-card-subtitle class="ion-margin-top">{{card.sub}}</ion-card-subtitle>    
+    <ion-card-title>{{card.tit}}</ion-card-title>  
+    <ion-card-content>      {{card.cont}}    </ion-card-content>  
+  </ion-card>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item color="medium">
+    <ion-label >
+      Mecânica
+    </ion-label>
+    <ion-icon name="settings"></ion-icon>
+  </ion-item>
+  <ion-item>
+  <ion-input type="text" placeholder=" Modelo do carro "> Modelo: </ion-input>
+  </ion-item>
+  <ion-list>
+    <ion-item *ngFor="let cad of cadastro">
+      <ion-label>{{cad.modelo}}</ion-label>
+      <ion-checkbox color="success" checked="{{cad.modelo}}" [(ngModel)]="cad.val"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-label placeholder="Modelo do carro">Ano do Carro:</ion-label>
+    <ion-datetime display-format="DD/MM/YY"></ion-datetime>
+  </ion-item>
+  <ion-button  expand="block" (click)="Exibir()">Registrar</ion-button>
+</ion-content>

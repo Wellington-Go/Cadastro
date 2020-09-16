@@ -1,0 +1,37 @@
+<ion-header>  
+  <ion-toolbar color="primary"> 
+   <ion-buttons slot="start">     
+    <ion-back-button></ion-back-button>      
+    <ion-menu-button></ion-menu-button>   
+   </ion-buttons>    
+   <ion-title>Interçao de cadastro</ion-title>  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+    <ion-item *ngIf="Auto.length < 1">
+      <ion-label>
+        nada cadastrado
+      </ion-label>
+    </ion-item>
+    
+    <ion-item-sliding *ngFor="let autos of Auto">
+      <ion-label>{{autos.nome}}</ion-label>
+       </ion-item-sliding>
+
+    <ion-button (click)="add()">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+  </ion-list>
+  
+
+  
+  
+   
+  
+
+  
+  
+
+</ion-content>
